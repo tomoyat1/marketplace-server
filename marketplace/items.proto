@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package marketplace;
+
+service Items {
+  rpc ListItems (ListItemsRequest) returns (ListItemsReply) {}
+}
+
+message ListItemsRequest {
+  int32 page_number = 1;
+}
+
+message ListItemsReply {
+  repeated Item items = 1;
+}
+
+message Item {
+  string id = 1;
+  string name = 2;
+  int32 price = 3;
+}
